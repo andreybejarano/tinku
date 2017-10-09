@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import {
+  Image,
   Platform,
   StyleSheet,
   Text,
@@ -13,26 +14,30 @@ import {
 } from 'react-native';
 import appStyle from '../statics/styles/appStyle'; 
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
-
 export default class App extends Component<{}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Image style={styles.backgroudLevel} source={require('../statics/images/backgroud_level.png')}>
+          <Text style={styles.title}>
+            LA CUMBIA DE TINKU
+          </Text>
+          <Text style={styles.label}>
+            Autor de la cancion
+          </Text>
+          <View style={styles.containerDropInstruments}>
+            <View style={styles.dropIntrument}></View>
+            <View style={styles.dropIntrument}></View>
+            <View style={styles.dropIntrument}></View>
+          </View>
+          <View style={styles.containerImagesIntruments}>
+            <Image style={styles.instrument} source={require('../statics/images/bandeoneon.png')}/>
+            <Image style={styles.instrument} source={require('../statics/images/gaita.png')}/>
+            <Image style={styles.instrument} source={require('../statics/images/maracas.png')}/>
+            <Image style={styles.instrument} source={require('../statics/images/tambora.png')}/>
+            <Image style={styles.instrument} source={require('../statics/images/zikus.png')}/>
+          </View>
+        </Image>
       </View>
     );
   }
