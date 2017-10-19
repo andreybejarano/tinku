@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Image,
@@ -15,12 +9,17 @@ import {
 } from 'react-native';
 import appStyle from '../statics/styles/appStyle';
 
-export default class App extends Component<{}> {
+
+export default class MusicGameScreen extends Component {
 
   constructor(props){
     super(props);
     this.state = {jojo:require('../statics/images/backgroud_level.png')};
   }
+
+  static navigatorStyle = {
+    navBarHidden: true
+  };
 
   render() {
     return (
