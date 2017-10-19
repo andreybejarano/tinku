@@ -1,16 +1,10 @@
 export default {
 	container: {
+		padding: '5%',
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
 		backgroundColor: '#F9E33E',
-	},
-	backgroudLevel: {
-		padding: '5%',
-		height: '100%',
-		width: '100%',
-		justifyContent: 'center',
-		alignItems: 'center',
 	},
 	title: {
 		fontFamily: 'Dosis-Bold',
@@ -25,7 +19,7 @@ export default {
 	containerDropInstruments: {
 		flex: 1,
 		flexDirection: 'row',
-		width: '50%', 
+		width: '50%',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
@@ -48,6 +42,6 @@ export default {
 	},
 	instrument: {
 		marginLeft: 25,
-		marginRight: 25		
+		marginRight: 25
 	}
 };
