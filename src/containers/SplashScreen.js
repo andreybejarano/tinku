@@ -18,7 +18,6 @@ const window = Dimensions.get('window');
 export default class SplashScreen extends Component<{}> {
 
   componentDidMount() {
-    console.log('jojo')
     setTimeout(() => this.goToMainScreen(), 3000)
   }
 

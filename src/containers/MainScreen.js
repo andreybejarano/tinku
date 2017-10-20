@@ -18,13 +18,12 @@ const window = Dimensions.get('window');
 export default class MainScreen extends Component<{}> {
 
   componentDidMount() {
-    console.log('jojo')
     setTimeout(() => this.goToMainScreen(), 5000)
   }
 
   goToMainScreen(){
     this.props.navigator.resetTo({
-      screen: 'MusicGameScreen',
+      screen: 'MusicWorldScreen',
       animated: true
     });
   }
@@ -39,8 +38,9 @@ export default class MainScreen extends Component<{}> {
 
   render() {
     return (
-      <Image style={{flex:1, width: window.width, height: window.height}}
-        source={require('../statics/images/mapa.png')}/>
+      <ImageBackground style={{flex:1, width: window.width, height: window.height}}
+        source={require('../statics/images/mapa.png')}>
+      </ImageBackground>
     );
   }
 }
