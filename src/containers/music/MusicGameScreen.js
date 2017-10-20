@@ -36,11 +36,11 @@ export default class MusicGameScreen extends Component {
           <View style={styles.dropIntrument}></View>
         </View>
         <View style={styles.containerImagesIntruments}>
-          <Image style={styles.instrument} source={require('../../statics/images/bandeoneon.png')}/>
-          <Image style={styles.instrument} source={require('../../statics/images/gaita.png')}/>
-          <Image style={styles.instrument} source={require('../../statics/images/maracas.png')}/>
-          <Image style={styles.instrument} source={require('../../statics/images/tambora.png')}/>
-          <Image style={styles.instrument} source={require('../../statics/images/zikus.png')}/>
+          <Image style={styles.instrument} source={require('../../statics/images/instrumentos/Bandoneon.png')}/>
+          <Image style={styles.instrument} source={require('../../statics/images/instrumentos/Gaita.png')}/>
+          <Image style={styles.instrument} source={require('../../statics/images/instrumentos/Maracas.png')}/>
+          <Image style={styles.instrument} source={require('../../statics/images/instrumentos/Tambora.png')}/>
+          <Image style={styles.instrument} source={require('../../statics/images/instrumentos/Sikus.png')}/>
         </View>
       </ImageBackground>
     );

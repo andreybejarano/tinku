@@ -16,7 +16,7 @@ import appStyle from '../../statics/styles/appStyle';
 
 const window = Dimensions.get('window');
 
-export default class MusicGameScreen extends Component<{}> {
+export default class MusicListScreen extends Component<{}> {
 
   goToMusicGameScreen(){
     this.props.navigator.resetTo({
