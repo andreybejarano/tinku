@@ -4,6 +4,6 @@
  * @flow
  */
 
- import registerApp from './index';
+ import registerApp from './src/index.js';
 
  registerApp();
