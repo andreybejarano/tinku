@@ -1,88 +1,76 @@
 {rhythms:[
   {
     rhythm:'TANGO',
-    music:'tango.wav',
+    music:'tango.mp3',
     background:'',
     finishBackground:'',
     instruments:[
       {
         name:'violin',
         image:'Violin.png',
-        sound:'Violin.wav',
+        sound:'violin.mp3',
         correct:true
       },
       {
         name:'bandoneon',
         image:'Bandoneon.png',
-        sound:'Bandoneon.wav',
+        sound:'bandoneon.mp3',
         correct:true
-      }
+      },
       {
         name:'piano',
         image:'Piano.png',
-        sound:'Piano.wav',
+        sound:'piano.mp3',
         correct:true
-      }
+      },
       {
-        name:'quena',
-        image:'Quena.png',
-        sound:'??',
+        name:'sikus',
+        image:'Sikus.png',
+        sound:'sikus.mp3',
         correct:false
-      }
+      },
       {
-        name:'birimbao',
-        image:'Birimbao.png',
-        sound:'??',
-        correct:false
-      }
-      {
-        name:'bandola',
-        image:'Bandola.png',
-        sound:'??',
+        name:'maracas',
+        image:'Maracas.png',
+        sound:'maracas.mp3',
         correct:false
       }
     ]
   },
   {
     rhythm:'HUAYNO',
-    music:'huayno.wav',
+    music:'huayno.mp3',
     background:'',
     finishBackground:'',
     instruments:[
       {
         name:'sikus',
         image:'Sikus.png',
-        sound:'Sikus.wav',
+        sound:'sikus.mp3',
         correct:true
       },
       {
         name:'charango',
         image:'Charango.png',
-        sound:'Charango.wav',
+        sound:'charango.mp3',
         correct:true
-      }
+      },
       {
         name:'bombo',
         image:'Bombo.png',
-        sound:'??',
+        sound:'bombo.mp3',
         correct:true
-      }
+      },
       {
         name:'guiro',
         image:'Guiro.png',
-        sound:'??',
+        sound:'guiro.mp3',
         correct:false
-      }
+      },
       {
         name:'agogo',
         image:'Agogo.png',
-        sound:'??',
-        correct:false
-      }
-      {
-        name:'tantan',
-        image:'Tantan.png',
-        sound:'Tantan.wav',
+        sound:'agogo.mp3',
         correct:false
       }
     ]
@@ -90,44 +78,38 @@
 
   {
     rhythm:'SAMBA',
-    music:'samba.wav',
+    music:'samba.mp3',
     background:'',
     finishBackground:'',
     instruments:[
       {
         name:'pandeiro',
         image:'Pandeiro.png',
-        sound:'Pandeiro.wav',
+        sound:'pandeiro.mp3',
         correct:true
       },
       {
         name:'tantan',
         image:'Tantan.png',
-        sound:'Tantan.wav',
+        sound:'tantan.mp3',
         correct:true
-      }
+      },
       {
         name:'zurdo',
         image:'Zurdo.png',
-        sound:'Zurdo.wav',
+        sound:'zurdo.mp3',
         correct:true
-      }
+      },
       {
-        name:'acordeón',
-        image:'Acordeon.png',
-        sound:'??',
+        name:'bandoneon',
+        image:'Bandoneon.png',
+        sound:'bandoneon.mp3',
         correct:false
-      }
+      },
       {
         name:'violin',
         image:'Violin.png',
-        sound:'Violin.wav',
-        correct:false
-      }
-      {
-        name:'charango',
-        image:'Charango.png',
-        sound:'Charango.wav',
+        sound:'violin.mp3',
         correct:false
       }
     ]
@@ -135,44 +117,38 @@
 
   {
     rhythm:'CUMBIA',
-    music:'cumbia.wav',
+    music:'cumbia.mp3',
     background:'',
     finishBackground:'',
     instruments:[
       {
-        name:'maraca',
+        name:'maracas',
         image:'Maracas.png',
-        sound:'Maracas.wav',
+        sound:'maracas.mp3',
         correct:true
       },
       {
         name:'tambora',
         image:'Tambora.png',
-        sound:'Tambora.wav',
+        sound:'tambora.mp3',
         correct:true
-      }
+      },
       {
         name:'gaita',
         image:'Gaita.png',
-        sound:'Gaita.wav',
+        sound:'gaita.mp3',
         correct:true
-      }
+      },
+      {
+        name:'birimbao',
+        image:'Birimbao.png',
+        sound:'birimbao.mp3',
+        correct:false
+      },
       {
         name:'arpa',
         image:'Arpa.png',
-        sound:'??',
-        correct:false
-      }
-      {
-        name:'sikus',
-        image:'Sikus.png',
-        sound:'Sikus.wav',
-        correct:false
-      }
-      {
-        name:'cuatro',
-        image:'Cuatro.png',
-        sound:'??',
+        sound:'arpa.mp3',
         correct:false
       }
     ]
