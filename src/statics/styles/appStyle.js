@@ -3,7 +3,6 @@ export default {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#F9E33E',
 	},
 	backgroudLevel: {
 		padding: '5%',
@@ -30,14 +29,14 @@ export default {
 		alignItems: 'center',
 		marginTop: 100,		
 	},
-	dropIntrument: {
-		borderRadius: 85,
+	dropZone: {
+		borderRadius: 110,
 		borderWidth: 3,
 		borderStyle: 'dashed',
 		borderColor: '#724212',
 		backgroundColor: '#ffffff',
-		height: 170,
-		width: 170,
+		height: 220,
+		width: 220,
 		margin: 15,
 	},
 	containerImagesIntruments: {
@@ -47,16 +46,5 @@ export default {
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginTop: 200,		
-	},
-	instrument: {
-		marginLeft: 25,
-		marginRight: 25		
-	},
-	descriptionInstrument: {
-		fontFamily: 'Dosis-Bold',
-		color: '#724212',
-		fontSize: 40,
-		justifyContent: 'center',
-		alignItems: 'center',
 	}
 };

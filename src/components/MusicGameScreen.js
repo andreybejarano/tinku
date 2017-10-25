@@ -5,9 +5,12 @@ import {
 	Platform,
 	StyleSheet,
 	Text,
-	View
+	View,
+	Animated
 } from 'react-native';
+import Draggable from './Draggable';
 import appStyle from '../statics/styles/appStyle';
+// import Sound from 'react-native-sound';
 
 
 export default class MusicGameScreen extends Component {
@@ -15,32 +18,55 @@ export default class MusicGameScreen extends Component {
 	constructor(props) {
 		super(props);
 		this.instruments = props.config.instruments;
+		this.dropZones = [];
 	}
 
 	static navigatorStyle = {
 		navBarHidden: true
 	};
 
+
+
+	setDropZoneValues(event) {
+		this.dropZones.push(event.nativeEvent.layout);
+	}
+
 	render() {
+		// let whoosh = new Sound('cumbia.wav', Sound.MAIN_BUNDLE, (error) => {
+		// 	if (error) {
+		// 		console.log('failed to load the sound', error);
+		// 		return;
+		// 	}
+		// 	// loaded successfully
+		// 	console.log('duration in seconds: ' + whoosh.getDuration() + 'number of channels: ' + whoosh.getNumberOfChannels());
+		// });
+		// whoosh.play((success) => {
+		// 	if (success) {
+		// 		console.log('successfully finished playing');
+		// 	} else {
+		// 		console.log('playback failed due to audio decoding errors');
+		// 		// reset the player to its uninitialized state (android only)
+		// 		// this is the only option to recover after an error occured and use the player again
+		// 		whoosh.reset();
+		// 	}
+		// });
 		return (
 			<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
 				<Text style={styles.title}>
 					{this.props.config.name.toUpperCase()}
 				</Text>
 				<View style={styles.containerDropInstruments}>
-					<View style={styles.dropIntrument}></View>
-					<View style={styles.dropIntrument}></View>
-					<View style={styles.dropIntrument}></View>
+					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
+					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
+					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
 				</View>
 				<View style={styles.containerImagesIntruments}>
 					{
 						this.instruments
-							.map(instrument => {
-								return <View>
-									<Image style={styles.instrument} source={instrument.img} />
-									<Text style={styles.descriptionInstrument}>{instrument.name}</Text>
-								</View>
-							})}
+							.map((instrument) => {
+								return <Draggable key={instrument.name} dropzones={this.dropZones} instrument={instrument}></Draggable>
+							})
+					}
 				</View>
 			</ImageBackground>
 		);
