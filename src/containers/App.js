@@ -12,32 +12,45 @@ import {
   Text,
   View
 } from 'react-native';
+import MusicGameScreen from "../components/MusicGameScreen";
 import appStyle from '../statics/styles/appStyle'; 
 
 export default class App extends Component<{}> {
   render() {
+    const config = {
+      name: 'Cumbia',
+      background: require('../statics/images/backgroud_level.png'),
+      instruments: [
+        {
+          name: 'Maracas', 
+          valid: true, 
+          img: require('../statics/images/instrumentos/maracas.png')
+        },
+        {
+          name: 'Tambora', 
+          valid: true, 
+          img: require('../statics/images/instrumentos/tambora.png')
+        },
+        {
+          name: 'Gaita', 
+          valid: true, 
+          img: require('../statics/images/instrumentos/gaita.png')
+        },
+        {
+          name: 'Arpa', 
+          valid: false, 
+          img: require('../statics/images/instrumentos/arpa.png')
+        },
+        {
+          name: 'Birimbao', 
+          valid: false, 
+          img: require('../statics/images/instrumentos/barimbaru.png')
+        }
+      ]
+    }
     return (
       <View style={styles.container}>
-        <Image style={styles.backgroudLevel} source={require('../statics/images/backgroud_level.png')}>
-          <Text style={styles.title}>
-            LA CUMBIA DE TINKU
-          </Text>
-          <Text style={styles.label}>
-            Autor de la cancion
-          </Text>
-          <View style={styles.containerDropInstruments}>
-            <View style={styles.dropIntrument}></View>
-            <View style={styles.dropIntrument}></View>
-            <View style={styles.dropIntrument}></View>
-          </View>
-          <View style={styles.containerImagesIntruments}>
-            <Image style={styles.instrument} source={require('../statics/images/bandeoneon.png')}/>
-            <Image style={styles.instrument} source={require('../statics/images/gaita.png')}/>
-            <Image style={styles.instrument} source={require('../statics/images/maracas.png')}/>
-            <Image style={styles.instrument} source={require('../statics/images/tambora.png')}/>
-            <Image style={styles.instrument} source={require('../statics/images/zikus.png')}/>
-          </View>
-        </Image>
+        <MusicGameScreen config={config}></MusicGameScreen>
       </View>
     );
   }

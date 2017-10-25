@@ -15,7 +15,7 @@ export default {
 	title: {
 		fontFamily: 'Dosis-Bold',
 		color: '#724212',
-		fontSize: 50,
+		fontSize: 70,
 	},
 	label: {
 		fontFamily: 'Dosis-Bold',
@@ -28,6 +28,7 @@ export default {
 		width: '50%', 
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginTop: 100,		
 	},
 	dropIntrument: {
 		borderRadius: 85,
@@ -45,9 +46,17 @@ export default {
 		width: '60%',
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginTop: 200,		
 	},
 	instrument: {
 		marginLeft: 25,
 		marginRight: 25		
+	},
+	descriptionInstrument: {
+		fontFamily: 'Dosis-Bold',
+		color: '#724212',
+		fontSize: 40,
+		justifyContent: 'center',
+		alignItems: 'center',
 	}
 };
