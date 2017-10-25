@@ -14,6 +14,7 @@ export default class MusicGameScreen extends Component {
 
 	constructor(props) {
 		super(props);
+		this.instruments = props.config.instruments;
 	}
 
 	static navigatorStyle = {
@@ -32,27 +33,14 @@ export default class MusicGameScreen extends Component {
 					<View style={styles.dropIntrument}></View>
 				</View>
 				<View style={styles.containerImagesIntruments}>
-					<View>
-						<Image style={styles.instrument} source={this.props.config.instruments[0].img} />
-						<Text style={styles.descriptionInstrument}>{this.props.config.instruments[0].name}</Text>
-					</View>
-					<View>
-						<Image style={styles.instrument} source={this.props.config.instruments[1].img} />
-						<Text style={styles.descriptionInstrument}>{this.props.config.instruments[1].name}</Text>
-					</View>
-					<View>
-						<Image style={styles.instrument} source={this.props.config.instruments[2].img} />
-						<Text style={styles.descriptionInstrument}>{this.props.config.instruments[2].name}</Text>
-					</View>
-					<View>
-						<Image style={styles.instrument} source={this.props.config.instruments[3].img} />
-						<Text style={styles.descriptionInstrument}>{this.props.config.instruments[3].name}</Text>
-					</View>
-					<View>
-						<Image style={styles.instrument} source={this.props.config.instruments[4].img} />
-						<Text style={styles.descriptionInstrument}>{this.props.config.instruments[4].name}</Text>
-					</View>
-					
+					{
+						this.instruments
+							.map(instrument => {
+								return <View>
+									<Image style={styles.instrument} source={instrument.img} />
+									<Text style={styles.descriptionInstrument}>{instrument.name}</Text>
+								</View>
+							})}
 				</View>
 			</ImageBackground>
 		);
