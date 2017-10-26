@@ -19,7 +19,8 @@ export default class App extends Component<{}> {
   render() {
     const config = {
       name: 'Cumbia',
-      background: require('../statics/images/fondoCumbia.jpg'),
+      title: require('../statics/images/cumbiaTitulo.png'),
+      background: require('../statics/images/fondoCumbia.png'),
       instruments: [
         {
           name: 'Maracas', 

@@ -14,8 +14,7 @@ export default class Draggable extends Component {
 		this.state = {
 			showDraggable: true,
 			dropZoneValues: null,
-			pan: new Animated.ValueXY(),
-			initial: new Animated.ValueXY()
+			pan: new Animated.ValueXY()
 		};
 		this.panResponder = PanResponder.create({
 			onStartShouldSetPanResponder: () => true,
@@ -25,10 +24,9 @@ export default class Draggable extends Component {
 			}]),
 			onPanResponderRelease: (e, gesture) => {
 				if (this.isDropZone(gesture)) {
-					console.log(gesture);
-					console.log(this.props.dropzones);
+					console.warn(this.state.pan.x);
 				} else {
-					console.log('false');
+					console.warn('false');
 					// Animated.spring(
 					// 	this.state.pan,
 					// 	{ toValue: { x: this.state.initial.x, y: this.state.initial.x } }

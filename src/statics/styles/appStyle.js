@@ -12,9 +12,8 @@ export default {
 		alignItems: 'center',
 	},
 	title: {
-		fontFamily: 'Dosis-Bold',
-		color: '#724212',
-		fontSize: 70,
+		height: 60,
+		width: 300,
 	},
 	label: {
 		fontFamily: 'Dosis-Bold',

@@ -52,9 +52,7 @@ export default class MusicGameScreen extends Component {
 		// });
 		return (
 			<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
-				<Text style={styles.title}>
-					{this.props.config.name.toUpperCase()}
-				</Text>
+				<Image style={styles.title} source={this.props.config.title}></Image>
 				<View style={styles.containerDropInstruments}>
 					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
 					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
