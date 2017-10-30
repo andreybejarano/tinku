@@ -19,6 +19,9 @@ export default class MusicGameScreen extends Component {
 		super(props);
 		this.instruments = props.config.instruments;
 		this.dropZones = [];
+		this.state = {
+			containerZone: null
+		}
 	}
 
 	static navigatorStyle = {
@@ -26,6 +29,9 @@ export default class MusicGameScreen extends Component {
 	};
 
 
+	setContainerZone(event) {
+		this.setState({ containerZone: event.nativeEvent.layout });
+	}
 
 	setDropZoneValues(event) {
 		this.dropZones.push(event.nativeEvent.layout);
@@ -53,7 +59,7 @@ export default class MusicGameScreen extends Component {
 		return (
 			<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
 				<Image style={styles.title} source={this.props.config.title}></Image>
-				<View style={styles.containerDropInstruments}>
+				<View onLayout={this.setContainerZone.bind(this)} style={styles.containerDropInstruments}>
 					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
 					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
 					<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone}></View>
@@ -62,7 +68,7 @@ export default class MusicGameScreen extends Component {
 					{
 						this.instruments
 							.map((instrument) => {
-								return <Draggable key={instrument.name} dropzones={this.dropZones} instrument={instrument}></Draggable>
+								return <Draggable key={instrument.name} containerzone={this.state.containerZone} dropzones={this.dropZones} instrument={instrument}></Draggable>
 							})
 					}
 				</View>

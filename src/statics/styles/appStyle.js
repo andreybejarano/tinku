@@ -21,12 +21,11 @@ export default {
 		fontSize: 30,
 	},
 	containerDropInstruments: {
-		flex: 1,
+		height: 220,
 		flexDirection: 'row',
-		width: '50%', 
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: 100,		
+		marginTop: 100,
 	},
 	dropZone: {
 		borderRadius: 110,
@@ -39,11 +38,10 @@ export default {
 		margin: 15,
 	},
 	containerImagesIntruments: {
-		flex: 1,
 		flexDirection: 'row',
-		width: '60%',
+		width: 220,
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: 200,		
+		marginTop: 50,
 	}
 };

@@ -24,7 +24,8 @@ export default class Draggable extends Component {
 			}]),
 			onPanResponderRelease: (e, gesture) => {
 				if (this.isDropZone(gesture)) {
-					console.warn(this.state.pan.x);
+					console.log(gesture);
+					console.log(this.props.containerzone);
 				} else {
 					console.warn('false');
 					// Animated.spring(
@@ -37,9 +38,8 @@ export default class Draggable extends Component {
 	}
 
 	isDropZone(gesture) {
-		for (let dz of this.props.dropzones) {
-			return this.props.instrument.valid;
-		}
+		let dz = this.props.containerzone; 
+		return (gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height) && this.props.instrument.valid;
 	}
 
 	render() {
