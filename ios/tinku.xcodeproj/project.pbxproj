@@ -45,6 +45,7 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		CA810E2935B14F87B6618704 /* Dosis-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4DD335EE65CC4F1486E9433A /* Dosis-ExtraLight.ttf */; };
 		CC4DDE5C1F98F7FE0065A80D /* libReactNativeNavigation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CC4DDE5B1F98F7D10065A80D /* libReactNativeNavigation.a */; };
+		CC6C823B1FA85528003A8415 /* raw in Resources */ = {isa = PBXBuildFile; fileRef = CC6C823A1FA85528003A8415 /* raw */; };
 		F1332BB9A70549B68F71906A /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A59280DF8B6A4C0DACEE3D9D /* Dosis-Medium.ttf */; };
 /* End PBXBuildFile section */
 
@@ -344,6 +345,7 @@
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
 		B11E5B0A7EE448A4B3A90732 /* Dosis-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Dosis-Light.ttf"; path = "../src/statics/fonts/Dosis-Light.ttf"; sourceTree = "<group>"; };
 		CC4DDE2D1F98F7D10065A80D /* ReactNativeNavigation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeNavigation.xcodeproj; path = "../node_modules/react-native-navigation/ios/ReactNativeNavigation.xcodeproj"; sourceTree = "<group>"; };
+		CC6C823A1FA85528003A8415 /* raw */ = {isa = PBXFileReference; lastKnownFileType = folder; name = raw; path = ../android/app/src/main/res/raw; sourceTree = "<group>"; };
 		E178B73E24934D5E983CEBBA /* Dosis-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Dosis-ExtraBold.ttf"; path = "../src/statics/fonts/Dosis-ExtraBold.ttf"; sourceTree = "<group>"; };
 		F9421F8D5DB7405A831B7B79 /* Dosis-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Dosis-Regular.ttf"; path = "../src/statics/fonts/Dosis-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -567,6 +569,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				CC6C823A1FA85528003A8415 /* raw */,
 				13B07FAE1A68108700A75B9A /* tinku */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* tinkuTests */,
@@ -1073,6 +1076,7 @@
 				CA810E2935B14F87B6618704 /* Dosis-ExtraLight.ttf in Resources */,
 				2DA35F216439409BA2A43356 /* Dosis-Light.ttf in Resources */,
 				F1332BB9A70549B68F71906A /* Dosis-Medium.ttf in Resources */,
+				CC6C823B1FA85528003A8415 /* raw in Resources */,
 				0953A12FCB654FF1AF5886B9 /* Dosis-Regular.ttf in Resources */,
 				6A68C3961ECB4696AAF8575A /* Dosis-SemiBold.ttf in Resources */,
 			);

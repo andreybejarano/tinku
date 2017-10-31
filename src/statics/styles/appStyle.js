@@ -1,15 +1,19 @@
 export default {
 	container: {
-		padding: '5%',
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		backgroundColor: '#F9E33E',
+	},
+	backgroudLevel: {
+		padding: '5%',
+		height: '100%',
+		width: '100%',
+		justifyContent: 'center',
+		alignItems: 'center',
 	},
 	title: {
-		fontFamily: 'Dosis-Bold',
-		color: '#724212',
-		fontSize: 50,
+		height: 60,
+		width: 300,
 	},
 	label: {
 		fontFamily: 'Dosis-Bold',
@@ -17,31 +21,27 @@ export default {
 		fontSize: 30,
 	},
 	containerDropInstruments: {
-		flex: 1,
+		height: 220,
 		flexDirection: 'row',
-		width: '50%',
 		justifyContent: 'center',
 		alignItems: 'center',
+		marginTop: 100,
 	},
-	dropIntrument: {
-		borderRadius: 85,
+	dropZone: {
+		borderRadius: 110,
 		borderWidth: 3,
 		borderStyle: 'dashed',
 		borderColor: '#724212',
 		backgroundColor: '#ffffff',
-		height: 170,
-		width: 170,
+		height: 220,
+		width: 220,
 		margin: 15,
 	},
 	containerImagesIntruments: {
-		flex: 1,
 		flexDirection: 'row',
-		width: '60%',
+		width: 220,
 		justifyContent: 'center',
 		alignItems: 'center',
-	},
-	instrument: {
-		marginLeft: 25,
-		marginRight: 25
+		marginTop: 50,
 	}
 };
