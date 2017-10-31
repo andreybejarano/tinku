@@ -12,10 +12,9 @@ export default class Draggable extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			showDraggable: true,
-			dropZoneValues: null,
 			pan: new Animated.ValueXY()
 		};
+
 		this.panResponder = PanResponder.create({
 			onStartShouldSetPanResponder: () => true,
 			onPanResponderMove: Animated.event([null, {
@@ -23,22 +22,29 @@ export default class Draggable extends Component {
 				dy: this.state.pan.y
 			}]),
 			onPanResponderRelease: (e, gesture) => {
+				this.props.countInstruments();
 				if (this.isDropZone(gesture)) {
-					console.log(gesture);
-					console.log(this.props.containerzone);
+					this.updateCountTrue();
 				} else {
-					console.warn('false');
-					// Animated.spring(
-					// 	this.state.pan,
-					// 	{ toValue: { x: this.state.initial.x, y: this.state.initial.x } }
-					// ).start();
+					setTimeout(() => {
+						if (this.props.failure) {
+							Animated.spring(
+								this.state.pan,
+								{ toValue: { x: 0, y: 0 } }
+							).start();
+						}
+					}, 500);
 				}
 			}
 		});
 	}
 
+	updateCountTrue() {
+		this.props.countTrue();
+	}
+
 	isDropZone(gesture) {
-		let dz = this.props.containerzone; 
+		let dz = this.props.containerzone;
 		return (gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height) && this.props.instrument.valid;
 	}
 
