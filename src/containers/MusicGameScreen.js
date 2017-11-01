@@ -9,6 +9,7 @@ import {
 	View,
 	Animated
 } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Draggable from '../components/Draggable';
 import appStyle from '../statics/styles/appStyle';
 
@@ -43,15 +44,16 @@ export default class MusicGameScreen extends Component {
 		setTimeout(() => {
 			if (this.state.countTruety === 3) {
 				this.setState({ gameOver: true });
-				Alert.alert(
-					'Felicitaciones',
-					'¡Felicitaciones lo lograste!',
-					[
-						{ text: 'Ok', onPress: () => console.log('Ok') }
+				Actions.musicGameOver({ 'config': this.props.config });
+				// Alert.alert(
+				// 	'Felicitaciones',
+				// 	'¡Felicitaciones lo lograste!',
+				// 	[
+				// 		{ text: 'Ok', onPress: () => console.log('Ok') }
 
-					],
-					{ cancelable: false }
-				);
+				// 	],
+				// 	{ cancelable: false }
+				// );
 			}
 		}, 300);
 	}

@@ -83,7 +83,7 @@ export default class MusicListScreen extends Component {
 			},
 			samba: {
 				name: 'Samba',
-				title: require('../statics/images/huainoTitulo.png'),
+				title: require('../statics/images/sambaTitulo.png'),
 				background: require('../statics/images/fondoSamba.png'),
 				backgroudGameover: require('../statics/images/fondoSambaFin.png'),
 				instruments: [

@@ -11,14 +11,14 @@ import MusicListScreen from './MusicListScreen';
 import MusicGameScreen from './MusicGameScreen';
 import MusicGameOver from './MusicGameOver';
 
-export default class App extends React.Component {
+export default class App extends Component {
 	render() {
 		return (
 			<Router>
 				<Scene key="root">
 					<Scene key="musicListScreen" component={MusicListScreen} hideNavBar/>
-					<Scene key="musicGameScreen" component={MusicGameScreen} />
-					<Scene key="musicGameOver" component={MusicGameOver} />
+					<Scene key="musicGameScreen" component={MusicGameScreen} hideNavBar/>
+					<Scene key="musicGameOver" component={MusicGameOver} hideNavBar/>
 				</Scene>
 			</Router>
 		);
