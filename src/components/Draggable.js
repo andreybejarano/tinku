@@ -26,17 +26,21 @@ export default class Draggable extends Component {
 				if (this.isDropZone(gesture)) {
 					this.updateCountTrue();
 				} else {
-					setTimeout(() => {
-						if (this.props.failure) {
-							Animated.spring(
-								this.state.pan,
-								{ toValue: { x: 0, y: 0 } }
-							).start();
-						}
-					}, 500);
+					console.log(this.state.pan);
 				}
 			}
 		});
+	}
+
+	componentWillReceiveProps(nextProps) {
+		let failure = nextProps.failure;
+		if (failure) {
+			Animated.spring(
+				this.state.pan,
+				{ toValue: { x: 0, y: 0 } }
+			).start();
+		}
+		failure = false;
 	}
 
 	updateCountTrue() {

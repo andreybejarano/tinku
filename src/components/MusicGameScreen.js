@@ -65,7 +65,7 @@ export default class MusicGameScreen extends Component {
 
 		setTimeout(() => {
 			if (this.state.count === 3 && !this.state.gameOver) {
-				this.setState({ count: 0, failed: true });
+				this.setState({ count: 0, countTruety: 0, failed: true });
 				Alert.alert(
 					'Lo sentimos',
 					'¡Intenta de nuevo!',
@@ -75,6 +75,7 @@ export default class MusicGameScreen extends Component {
 					],
 					{ cancelable: false }
 				);
+				this.setState({ count: 0, failed: false });
 			}
 		}, 400);
 	}
