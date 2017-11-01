@@ -5,56 +5,22 @@
  */
 
 import React, { Component } from 'react';
-import {
-  Image,
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import MusicGameScreen from "../components/MusicGameScreen";
-import appStyle from '../statics/styles/appStyle'; 
+import { Scene, Router } from 'react-native-router-flux';
 
-export default class App extends Component<{}> {
-  render() {
-    const config = {
-      name: 'Cumbia',
-      title: require('../statics/images/cumbiaTitulo.png'),
-      background: require('../statics/images/fondoCumbia.png'),
-      instruments: [
-        {
-          name: 'Maracas', 
-          valid: true, 
-          img: require('../statics/images/instrumentos/maracas.png')
-        },
-        {
-          name: 'Tambora', 
-          valid: true, 
-          img: require('../statics/images/instrumentos/tambora.png')
-        },
-        {
-          name: 'Gaita', 
-          valid: true, 
-          img: require('../statics/images/instrumentos/gaita.png')
-        },
-        {
-          name: 'Arpa', 
-          valid: false, 
-          img: require('../statics/images/instrumentos/arpa.png')
-        },
-        {
-          name: 'Birimbao', 
-          valid: false, 
-          img: require('../statics/images/instrumentos/barimbaru.png')
-        }
-      ]
-    }
-    return (
-      <View style={styles.container}>
-        <MusicGameScreen config={config}></MusicGameScreen>
-      </View>
-    );
-  }
+import MusicListScreen from './MusicListScreen';
+import MusicGameScreen from './MusicGameScreen';
+import MusicGameOver from './MusicGameOver';
+
+export default class App extends React.Component {
+	render() {
+		return (
+			<Router>
+				<Scene key="root">
+					<Scene key="musicListScreen" component={MusicListScreen} hideNavBar/>
+					<Scene key="musicGameScreen" component={MusicGameScreen} />
+					<Scene key="musicGameOver" component={MusicGameOver} />
+				</Scene>
+			</Router>
+		);
+	}
 }
-
-const styles = StyleSheet.create(appStyle);

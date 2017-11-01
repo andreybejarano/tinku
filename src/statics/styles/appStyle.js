@@ -15,6 +15,10 @@ export default {
 		height: 60,
 		width: 300,
 	},
+	titleGameover: {
+		height: 100,
+		width: 500,
+	},
 	label: {
 		fontFamily: 'Dosis-Bold',
 		color: '#724212',
@@ -43,5 +47,20 @@ export default {
 		justifyContent: 'center',
 		alignItems: 'center',
 		marginTop: 50,
+	},
+	instrument: {
+		marginLeft: 25,
+		marginRight: 25,
+	},
+	descriptionInstrument: {
+		fontFamily: 'Dosis-Bold',
+		color: '#724212',
+		fontSize: 35,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	touchable: {
+		justifyContent: 'center',
+		alignItems: 'center',
 	}
 };
