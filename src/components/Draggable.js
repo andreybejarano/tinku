@@ -58,7 +58,6 @@ export default class Draggable extends Component {
 				{...this.panResponder.panHandlers}
 				style={[this.state.pan.getLayout()]}>
 				<Image style={styles.instrument} source={this.props.instrument.img} />
-				<Text style={styles.descriptionInstrument}>{this.props.instrument.name}</Text>
 			</Animated.View>
 		);
 	}
@@ -68,12 +67,5 @@ let styles = StyleSheet.create({
 	instrument: {
 		marginLeft: 25,
 		marginRight: 25,
-	},
-	descriptionInstrument: {
-		fontFamily: 'Dosis-Bold',
-		color: '#fff',
-		fontSize: 35,
-		justifyContent: 'center',
-		alignItems: 'center',
 	}
 });

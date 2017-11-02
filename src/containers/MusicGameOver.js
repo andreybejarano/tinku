@@ -31,7 +31,7 @@ export default class MusicGameOver extends Component {
 							this.instruments
 								.map((instrument) => {
 									if (instrument.valid) {
-										return <View key={instrument.name}>
+										return <View key={instrument.name} style={styles.containerIntruments}>
 											<Image style={styles.instrument} source={instrument.img} />
 											<Text style={styles.descriptionInstrument}>{instrument.name}</Text>
 										</View>;

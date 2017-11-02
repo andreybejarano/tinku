@@ -103,7 +103,12 @@ export default class MusicGameScreen extends Component {
 						{
 							this.instruments
 								.map((instrument) => {
-									return <Draggable key={instrument.name} failure={this.state.failed} countInstruments={this.updateCount.bind(this)} countTrue={this.updateCountTrue.bind(this)} containerzone={this.state.containerZone} dropzones={this.dropZones} instrument={instrument} />;
+									return (
+										<View key={instrument.name} style={styles.containerIntruments}>
+											<Draggable failure={this.state.failed} countInstruments={this.updateCount.bind(this)} countTrue={this.updateCountTrue.bind(this)} containerzone={this.state.containerZone} dropzones={this.dropZones} instrument={instrument} />
+											<Text style={styles.descriptionInstrument}>{instrument.name}</Text>
+										</View>
+									);
 								})
 						}
 					</View>

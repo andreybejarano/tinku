@@ -41,6 +41,10 @@ export default {
 		width: 220,
 		margin: 15,
 	},
+	containerIntruments: {
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
 	containerImagesIntruments: {
 		flexDirection: 'row',
 		width: 220,
@@ -54,7 +58,7 @@ export default {
 	},
 	descriptionInstrument: {
 		fontFamily: 'Dosis-Bold',
-		color: '#724212',
+		color: '#fff',
 		fontSize: 35,
 		justifyContent: 'center',
 		alignItems: 'center',
