@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Draggable from '../components/Draggable';
+import Sound from 'react-native-sound';
 import appStyle from '../statics/styles/appStyle';
 
 export default class MusicGameScreen extends Component {
@@ -19,6 +20,17 @@ export default class MusicGameScreen extends Component {
 		super(props);
 		this.instruments = props.config.instruments;
 		this.dropZones = [];
+
+		Sound.setCategory('Ambient', true);
+
+		let song = new Sound(this.props.config.music, (error) => {
+			if (error) {
+				console.log('failed to load the sound', error);
+				return;
+			}
+			song.play();
+		});
+
 		this.state = {
 			containerZone: null,
 			countTruety: 0,
@@ -26,6 +38,10 @@ export default class MusicGameScreen extends Component {
 			failed: false,
 			gameOver: false
 		};
+	}
+
+	ComponentWillMount() {
+
 	}
 
 	setContainerZone(event) {
@@ -45,23 +61,16 @@ export default class MusicGameScreen extends Component {
 			if (this.state.countTruety === 3) {
 				this.setState({ gameOver: true });
 				Actions.musicGameOver({ 'config': this.props.config });
-				// Alert.alert(
-				// 	'Felicitaciones',
-				// 	'¡Felicitaciones lo lograste!',
-				// 	[
-				// 		{ text: 'Ok', onPress: () => console.log('Ok') }
-
-				// 	],
-				// 	{ cancelable: false }
-				// );
 			}
-		}, 300);
+		}, 100);
 	}
 
 	updateCount(event) {
-		this.setState(previousState => {
-			return { count: previousState.count + 1 };
-		});
+		setTimeout(() => {
+			this.setState(previousState => {
+				return { count: previousState.count + 1 };
+			});
+		}, 200);
 
 		setTimeout(() => {
 			if (this.state.count === 3 && !this.state.gameOver) {
@@ -70,14 +79,14 @@ export default class MusicGameScreen extends Component {
 					'Lo sentimos',
 					'¡Intenta de nuevo!',
 					[
-						{ text: 'Ok', onPress: () => console.log('Ok') }
+						{ text: 'Ok', onPress: () => console.log('fail') }
 
 					],
 					{ cancelable: false }
 				);
 				this.setState({ count: 0, failed: false });
 			}
-		}, 400);
+		}, 300);
 	}
 
 	render() {

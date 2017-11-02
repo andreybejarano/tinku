@@ -71,7 +71,7 @@ let styles = StyleSheet.create({
 	},
 	descriptionInstrument: {
 		fontFamily: 'Dosis-Bold',
-		color: '#724212',
+		color: '#fff',
 		fontSize: 35,
 		justifyContent: 'center',
 		alignItems: 'center',

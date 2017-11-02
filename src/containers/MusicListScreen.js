@@ -20,6 +20,7 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/cumbiaTitulo.png'),
 				background: require('../statics/images/fondoCumbia.png'),
 				backgroudGameover: require('../statics/images/fondoCumbiaFin.png'),
+				music: require('../statics/music/cumbia.mp3'),
 				instruments: [
 					{
 						name: 'Maracas',
@@ -53,31 +54,32 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/huainoTitulo.png'),
 				background: require('../statics/images/fondoHuaino.png'),
 				backgroudGameover: require('../statics/images/fondoHuainoFin.png'),
+				music: require('../statics/music/huaino.mp3'),
 				instruments: [
 					{
-						name: 'Maracas',
+						name: 'Sikus',
 						valid: true,
-						img: require('../statics/images/instrumentos/maracas.png')
+						img: require('../statics/images/instrumentos/sikus.png')
 					},
 					{
-						name: 'Tambora',
+						name: 'Charango',
 						valid: true,
-						img: require('../statics/images/instrumentos/tambora.png')
+						img: require('../statics/images/instrumentos/charango.png')
 					},
 					{
-						name: 'Gaita',
+						name: 'Bombo',
 						valid: true,
-						img: require('../statics/images/instrumentos/gaita.png')
+						img: require('../statics/images/instrumentos/bombo.png')
 					},
 					{
-						name: 'Arpa',
+						name: 'Guiro',
 						valid: false,
-						img: require('../statics/images/instrumentos/arpa.png')
+						img: require('../statics/images/instrumentos/guiro.png')
 					},
 					{
-						name: 'Birimbao',
+						name: 'Agogo',
 						valid: false,
-						img: require('../statics/images/instrumentos/barimbaru.png')
+						img: require('../statics/images/instrumentos/agogo.png')
 					}
 				]
 			},
@@ -86,21 +88,22 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/sambaTitulo.png'),
 				background: require('../statics/images/fondoSamba.png'),
 				backgroudGameover: require('../statics/images/fondoSambaFin.png'),
+				music: require('../statics/music/samba.mp3'),
 				instruments: [
 					{
-						name: 'Maracas',
+						name: 'Pandeiro',
 						valid: true,
-						img: require('../statics/images/instrumentos/maracas.png')
+						img: require('../statics/images/instrumentos/pandeiro.png')
 					},
 					{
-						name: 'Tambora',
+						name: 'Tantan',
 						valid: true,
-						img: require('../statics/images/instrumentos/tambora.png')
+						img: require('../statics/images/instrumentos/tantan.png')
 					},
 					{
-						name: 'Gaita',
+						name: 'Surdo',
 						valid: true,
-						img: require('../statics/images/instrumentos/gaita.png')
+						img: require('../statics/images/instrumentos/surdo.png')
 					},
 					{
 						name: 'Arpa',
@@ -108,7 +111,7 @@ export default class MusicListScreen extends Component {
 						img: require('../statics/images/instrumentos/arpa.png')
 					},
 					{
-						name: 'Birimbao',
+						name: 'Barimbaru',
 						valid: false,
 						img: require('../statics/images/instrumentos/barimbaru.png')
 					}
@@ -119,31 +122,32 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/tangoTitulo.png'),
 				background: require('../statics/images/fondoTango.png'),
 				backgroudGameover: require('../statics/images/fondoTangoFin.png'),
+				music: require('../statics/music/tango.mp3'),
 				instruments: [
 					{
+						name: 'Violín',
+						valid: true,
+						img: require('../statics/images/instrumentos/violin.png')
+					},
+					{
+						name: 'Bandoneón',
+						valid: true,
+						img: require('../statics/images/instrumentos/bandoneon.png')
+					},
+					{
+						name: 'Piano',
+						valid: true,
+						img: require('../statics/images/instrumentos/piano.png')
+					},
+					{
+						name: 'Sikus',
+						valid: false,
+						img: require('../statics/images/instrumentos/sikus.png')
+					},
+					{
 						name: 'Maracas',
-						valid: true,
+						valid: false,
 						img: require('../statics/images/instrumentos/maracas.png')
-					},
-					{
-						name: 'Tambora',
-						valid: true,
-						img: require('../statics/images/instrumentos/tambora.png')
-					},
-					{
-						name: 'Gaita',
-						valid: true,
-						img: require('../statics/images/instrumentos/gaita.png')
-					},
-					{
-						name: 'Arpa',
-						valid: false,
-						img: require('../statics/images/instrumentos/arpa.png')
-					},
-					{
-						name: 'Birimbao',
-						valid: false,
-						img: require('../statics/images/instrumentos/barimbaru.png')
 					}
 				]
 			}
