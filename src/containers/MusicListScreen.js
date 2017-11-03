@@ -20,7 +20,7 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/cumbiaTitulo.png'),
 				background: require('../statics/images/fondoCumbia.png'),
 				backgroudGameover: require('../statics/images/fondoCumbiaFin.png'),
-				music: require('../statics/music/cumbia.mp3'),
+				music: 'cumbia.mp3',
 				instruments: [
 					{
 						name: 'Maracas',
@@ -54,7 +54,7 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/huainoTitulo.png'),
 				background: require('../statics/images/fondoHuaino.png'),
 				backgroudGameover: require('../statics/images/fondoHuainoFin.png'),
-				music: require('../statics/music/huaino.mp3'),
+				music: 'huaino.mp3',
 				instruments: [
 					{
 						name: 'Sikus',
@@ -88,7 +88,7 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/sambaTitulo.png'),
 				background: require('../statics/images/fondoSamba.png'),
 				backgroudGameover: require('../statics/images/fondoSambaFin.png'),
-				music: require('../statics/music/samba.mp3'),
+				music: 'samba.mp3',
 				instruments: [
 					{
 						name: 'Pandeiro',
@@ -122,7 +122,7 @@ export default class MusicListScreen extends Component {
 				title: require('../statics/images/tangoTitulo.png'),
 				background: require('../statics/images/fondoTango.png'),
 				backgroudGameover: require('../statics/images/fondoTangoFin.png'),
-				music: require('../statics/music/tango.mp3'),
+				music: 'tango.mp3',
 				instruments: [
 					{
 						name: 'Violín',

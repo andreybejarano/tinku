@@ -23,7 +23,7 @@ export default class MusicGameScreen extends Component {
 
 		Sound.setCategory('Ambient', true);
 
-		let song = new Sound(this.props.config.music, (error) => {
+		let song = new Sound(props.config.music, Sound.MAIN_BUNDLE, (error) => {
 			if (error) {
 				console.log('failed to load the sound', error);
 				return;
