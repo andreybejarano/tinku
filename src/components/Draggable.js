@@ -7,6 +7,8 @@ import {
 	PanResponder,
 	Animated
 } from 'react-native';
+import Sound from 'react-native-sound';
+
 
 export default class Draggable extends Component {
 	constructor(props) {
@@ -52,12 +54,26 @@ export default class Draggable extends Component {
 		return (gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height) && this.props.instrument.valid;
 	}
 
+	playInstrument() {
+		Sound.setCategory('Playback', true);
+
+		let song = new Sound(this.props.instrument.music, Sound.MAIN_BUNDLE, (error) => {
+			if (error) {
+				console.log('failed to load the sound', error);
+				return;
+			}
+			song.play(() => {
+				song.release();
+			});
+		});
+	}
+
 	render() {
 		return (
 			<Animated.View
 				{...this.panResponder.panHandlers}
 				style={[this.state.pan.getLayout()]}>
-				<Image style={styles.instrument} source={this.props.instrument.img} />
+				<Image onTouchStart={() => this.playInstrument()} style={styles.instrument} source={this.props.instrument.img} />
 			</Animated.View>
 		);
 	}

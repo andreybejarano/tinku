@@ -21,14 +21,14 @@ export default class MusicGameScreen extends Component {
 		this.instruments = props.config.instruments;
 		this.dropZones = [];
 
-		Sound.setCategory('Ambient', true);
+		Sound.setCategory('Playback', true);
 
-		let song = new Sound(props.config.music, Sound.MAIN_BUNDLE, (error) => {
+		this.song = new Sound(props.config.music, Sound.MAIN_BUNDLE, (error) => {
 			if (error) {
 				console.log('failed to load the sound', error);
 				return;
 			}
-			song.play();
+			this.song.play();
 		});
 
 		this.state = {
@@ -70,7 +70,7 @@ export default class MusicGameScreen extends Component {
 			this.setState(previousState => {
 				return { count: previousState.count + 1 };
 			});
-		}, 200);
+		}, 150);
 
 		setTimeout(() => {
 			if (this.state.count === 3 && !this.state.gameOver) {
@@ -86,7 +86,7 @@ export default class MusicGameScreen extends Component {
 				);
 				this.setState({ count: 0, failed: false });
 			}
-		}, 300);
+		}, 200);
 	}
 
 	render() {
