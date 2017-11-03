@@ -24,7 +24,6 @@ export default class SplashScreen extends Component {
 
 	goToMainScreen() {
 		Actions.musicListScreen();
-
 	}
 
 

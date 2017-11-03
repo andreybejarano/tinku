@@ -62,6 +62,7 @@ export default class Draggable extends Component {
 				console.log('failed to load the sound', error);
 				return;
 			}
+			this.props.stopSongMain();
 			song.play(() => {
 				song.release();
 			});

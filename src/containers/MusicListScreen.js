@@ -5,10 +5,13 @@ import {
 	Platform,
 	StyleSheet,
 	View,
-	TouchableOpacity
+	TouchableOpacity,
+	Dimensions
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import appStyle from '../statics/styles/appStyle';
+
+const window = Dimensions.get('window');
 
 export default class MusicListScreen extends Component {
 
@@ -180,7 +183,7 @@ export default class MusicListScreen extends Component {
 
 	render() {
 		return (
-			<View style={styles.container}>
+			<View style={[styles.container, {width: window.width, height: window.height}]}>
 				<View style={{ flex: 1, flexDirection: 'row' }}>
 					<TouchableOpacity onPress={() => this.goToMusicGameScreen('cumbia')} style={[styles.touchable, { flex: 1}]}>
 						<Image style={[styles.touchable, { width: '100%', height: '100%' }]} source={require('../statics/images/fondoMenuCumbia.jpg')}>
