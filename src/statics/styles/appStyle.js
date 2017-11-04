@@ -1,8 +1,17 @@
+import { Dimensions } from 'react-native';
+const window = Dimensions.get('window');
 export default {
 	container: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
+	},
+	backgroundScreen: {
+		flex: 1, 
+		justifyContent: 'center',
+		alignItems: 'center',
+		width: window.width, 
+		height: window.height,
 	},
 	backgroudLevel: {
 		padding: '5%',
@@ -10,6 +19,15 @@ export default {
 		width: '100%',
 		justifyContent: 'center',
 		alignItems: 'center',
+	},
+	tituloMain: {
+		width: window.width*0.405,
+		height: window.height*0.355,
+	},
+	btnJugar: {
+		width: window.width*0.305,
+		height: window.height*0.105,
+		marginTop: window.height*0.10,
 	},
 	title: {
 		height: 60,

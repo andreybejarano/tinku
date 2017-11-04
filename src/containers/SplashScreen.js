@@ -23,14 +23,15 @@ export default class SplashScreen extends Component {
 	}
 
 	goToMainScreen() {
-		Actions.musicListScreen();
+		Actions.mainScreen();
 	}
 
 
 	render() {
 		return (
-			<Image style={{ flex: 1, width: window.width, height: window.height }}
-				source={require('../statics/images/splash_animation/LOGO_18.png')} />
+			<View style={styles.container}>
+				<Image style={{width: window.width*0.40, height: window.height*0.70}} source={require('../statics/images/splash_animation/logo.png')} />
+			</View>
 		);
 	}
 }

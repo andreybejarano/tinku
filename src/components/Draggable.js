@@ -24,11 +24,16 @@ export default class Draggable extends Component {
 				dy: this.state.pan.y
 			}]),
 			onPanResponderRelease: (e, gesture) => {
-				this.props.countInstruments();
 				if (this.isDropZone(gesture)) {
-					this.updateCountTrue();
+					this.props.countInstruments();
+					if(this.props.instrument.valid) {
+						this.updateCountTrue();
+					}
 				} else {
-					console.log(this.state.pan);
+					Animated.spring(
+						this.state.pan,
+						{ toValue: { x: 0, y: 0 } }
+					).start();
 				}
 			}
 		});
@@ -51,7 +56,7 @@ export default class Draggable extends Component {
 
 	isDropZone(gesture) {
 		let dz = this.props.containerzone;
-		return (gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height) && this.props.instrument.valid;
+		return (gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height);
 	}
 
 	playInstrument() {
