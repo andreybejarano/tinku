@@ -7,7 +7,8 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	Animated
+	Animated,
+	TouchableOpacity
 } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Draggable from '../components/Draggable';
@@ -20,24 +21,28 @@ export default class MusicGameScreen extends Component {
 		super(props);
 		this.instruments = props.config.instruments;
 		this.dropZones = [];
-
-		Sound.setCategory('Playback', true);
-
-		this.song = new Sound(props.config.music, Sound.MAIN_BUNDLE, (error) => {
-			if (error) {
-				console.log('failed to load the sound', error);
-				return;
-			}
-			this.song.play();
-		});
+		this.playMusic();
 
 		this.state = {
 			containerZone: null,
 			countTruety: 0,
 			count: 0,
 			failed: false,
-			gameOver: false
+			gameOver: false,
+			btn: require('../statics/images/stop.png'),
+			stop: false
 		};
+	}
+
+	playMusic() {
+		Sound.setCategory('Playback', true);
+		this.song = new Sound(this.props.config.music, Sound.MAIN_BUNDLE, (error) => {
+			if (error) {
+				console.log('failed to load the sound', error);
+				return;
+			}
+			this.song.play();
+		});
 	}
 
 	componentWillUnmount() {
@@ -45,7 +50,17 @@ export default class MusicGameScreen extends Component {
 	}
 
 	stopSong() {
+		this.setState({ stop: true, btn: require('../statics/images/play.png') });
 		this.song.stop().release();
+	}
+
+	stopOrPlay() {
+		if (!this.state.stop) {
+			this.stopSong();
+		} else {
+			this.setState({ stop: false, btn: require('../statics/images/stop.png') });
+			this.playMusic();
+		}
 	}
 
 	setContainerZone(event) {
@@ -97,6 +112,11 @@ export default class MusicGameScreen extends Component {
 		return (
 			<View style={styles.container}>
 				<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
+					<View>
+						<TouchableOpacity onPress={() => this.stopOrPlay()}>
+							<Image source={this.state.btn} />
+						</TouchableOpacity>
+					</View>
 					<Image style={styles.title} source={this.props.config.title} />
 					<View onLayout={this.setContainerZone.bind(this)} style={styles.containerDropInstruments}>
 						<View onLayout={this.setDropZoneValues.bind(this)} style={styles.dropZone} />

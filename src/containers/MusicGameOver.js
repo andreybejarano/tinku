@@ -7,6 +7,8 @@ import {
 	Text,
 	View,
 } from 'react-native';
+import config from '../api/configMusic';
+import { Actions } from 'react-native-router-flux';
 import appStyle from '../statics/styles/appStyle';
 
 export default class MusicGameOver extends Component {
@@ -14,7 +16,33 @@ export default class MusicGameOver extends Component {
 	constructor(props) {
 		super(props);
 		this.instruments = props.config.instruments;
+		this.config = config;
+		this.orderScreens = [
+			'cumbia',
+			'samba',
+			'tango',
+			'huaino'
+		];
 	}
+
+	componentDidMount() {
+		setTimeout(() => this.goToNextMusicScreen(), 5000);
+	}
+
+	goToNextMusicScreen() {
+		for (let i = 0; i < this.orderScreens.length; i++) {
+			if (this.props.config.name == this.orderScreens[i] && i+1 < this.orderScreens.length) {
+				Actions.musicGameScreen({ 'config': this.config[this.orderScreens[i + 1]] });
+				return;
+			}
+			if (i+1 == this.orderScreens.length) {
+				Actions.mainScreen();
+			}
+
+		}
+	}
+
+
 
 	render() {
 		return (
