@@ -103,16 +103,16 @@ export default {
 				music: 'zurdo.mp3'
 			},
 			{
-				name: 'Arpa',
+				name: 'Bandoneón',
 				valid: false,
-				img: require('../statics/images/instrumentos/arpa.png'),
-				music: 'arpa.mp3'
+				img: require('../statics/images/instrumentos/bandoneon.png'),
+				music: 'bandoneon.mp3'
 			},
 			{
-				name: 'Barimbaru',
+				name: 'Violín',
 				valid: false,
-				img: require('../statics/images/instrumentos/barimbaru.png'),
-				music: 'birimbao.mp3'
+				img: require('../statics/images/instrumentos/violin.png'),
+				music: 'violin.mp3'
 			}
 		]
 	},

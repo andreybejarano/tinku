@@ -19,13 +19,13 @@ export default class MusicGameScreen extends Component {
 
 	constructor(props) {
 		super(props);
-		this.instruments = props.config.instruments;
+		this.instruments = this.randomIntruments(props.config.instruments);
 		this.dropZones = [];
 		this.playMusic();
 
 		this.state = {
 			containerZone: null,
-			countTruety: 0,
+			countTruety: [],
 			count: 0,
 			failed: false,
 			gameOver: false,
@@ -43,6 +43,17 @@ export default class MusicGameScreen extends Component {
 			}
 			this.song.play();
 		});
+	}
+
+	randomIntruments(instruments) {
+		let random = [];		
+		while (random.length != 5) {
+			let number = Math.floor((Math.random() * 5));
+			if (!random.some(ran => ran == number)) {
+				random.push(number);
+			}
+		} 
+		return random.map(ran => instruments[ran]);
 	}
 
 	componentWillUnmount() {
@@ -72,16 +83,15 @@ export default class MusicGameScreen extends Component {
 	}
 
 	updateCountTrue(event) {
-		this.setState(previousState => {
-			return { countTruety: previousState.countTruety + 1 };
-		});
-
-		setTimeout(() => {
-			if (this.state.countTruety === 3) {
-				this.setState({ gameOver: true });
-				Actions.musicGameOver({ 'config': this.props.config });
-			}
-		}, 100);
+		if (!this.state.countTruety.some(instrument => instrument === event)) {
+			this.state.countTruety.push(event);
+			setTimeout(() => {
+				if (this.state.countTruety.length === 3) {
+					this.setState({ gameOver: true });
+					Actions.musicGameOver({ 'config': this.props.config });
+				}
+			}, 100);
+		}
 	}
 
 	updateCount(event) {
@@ -93,7 +103,7 @@ export default class MusicGameScreen extends Component {
 
 		setTimeout(() => {
 			if (this.state.count === 3 && !this.state.gameOver) {
-				this.setState({ count: 0, countTruety: 0, failed: true });
+				this.setState({ count: 0, countTruety: [], failed: true });
 				Alert.alert(
 					'Lo sentimos',
 					'¡Intenta de nuevo!',
@@ -114,7 +124,7 @@ export default class MusicGameScreen extends Component {
 				<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
 					<View>
 						<TouchableOpacity onPress={() => this.stopOrPlay()}>
-							<Image source={this.state.btn} />
+							<Image style={{ margin: 5 }} source={this.state.btn} />
 						</TouchableOpacity>
 					</View>
 					<Image style={styles.title} source={this.props.config.title} />

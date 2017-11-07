@@ -51,7 +51,7 @@ export default class Draggable extends Component {
 	}
 
 	updateCountTrue() {
-		this.props.countTrue();
+		this.props.countTrue(this.props.instrument.name);
 	}
 
 	isDropZone(gesture) {
