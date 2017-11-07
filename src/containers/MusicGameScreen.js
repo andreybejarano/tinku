@@ -21,7 +21,7 @@ export default class MusicGameScreen extends Component {
 		super(props);
 		this.instruments = this.randomIntruments(props.config.instruments);
 		this.dropZones = [];
-		this.playMusic();
+		this.playMusic(props.config.music);
 
 		this.state = {
 			containerZone: null,
@@ -34,9 +34,13 @@ export default class MusicGameScreen extends Component {
 		};
 	}
 
-	playMusic() {
+	playMusic(sound) {
 		Sound.setCategory('Playback', true);
-		this.song = new Sound(this.props.config.music, Sound.MAIN_BUNDLE, (error) => {
+		if(this.song) {
+			this.setState({ stop: false, btn: require('../statics/images/stop.png') });
+			this.stopSong();
+		}
+		this.song = new Sound(sound, Sound.MAIN_BUNDLE, (error) => {
 			if (error) {
 				console.log('failed to load the sound', error);
 				return;
@@ -61,16 +65,16 @@ export default class MusicGameScreen extends Component {
 	}
 
 	stopSong() {
-		this.setState({ stop: true, btn: require('../statics/images/play.png') });
 		this.song.stop().release();
 	}
-
+	
 	stopOrPlay() {
 		if (!this.state.stop) {
+			this.setState({ stop: true, btn: require('../statics/images/play.png') });
 			this.stopSong();
 		} else {
 			this.setState({ stop: false, btn: require('../statics/images/stop.png') });
-			this.playMusic();
+			this.playMusic(this.props.config.music);
 		}
 	}
 
@@ -139,7 +143,7 @@ export default class MusicGameScreen extends Component {
 								.map((instrument) => {
 									return (
 										<View key={instrument.name} style={styles.containerIntruments}>
-											<Draggable stopSongMain={this.stopSong.bind(this)} failure={this.state.failed} countInstruments={this.updateCount.bind(this)} countTrue={this.updateCountTrue.bind(this)} containerzone={this.state.containerZone} dropzones={this.dropZones} instrument={instrument} />
+											<Draggable playSoundInstrument={this.playMusic.bind(this)} failure={this.state.failed} countInstruments={this.updateCount.bind(this)} countTrue={this.updateCountTrue.bind(this)} containerzone={this.state.containerZone} dropzones={this.dropZones} instrument={instrument} />
 											<Text style={styles.descriptionInstrument}>{instrument.name}</Text>
 										</View>
 									);

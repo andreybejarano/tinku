@@ -26,7 +26,7 @@ export default class Draggable extends Component {
 			onPanResponderRelease: (e, gesture) => {
 				if (this.isDropZone(gesture)) {
 					this.props.countInstruments();
-					if(this.props.instrument.valid) {
+					if (this.props.instrument.valid) {
 						this.updateCountTrue();
 					}
 				} else {
@@ -60,18 +60,7 @@ export default class Draggable extends Component {
 	}
 
 	playInstrument() {
-		Sound.setCategory('Playback', true);
-
-		let song = new Sound(this.props.instrument.music, Sound.MAIN_BUNDLE, (error) => {
-			if (error) {
-				console.log('failed to load the sound', error);
-				return;
-			}
-			this.props.stopSongMain();
-			song.play(() => {
-				song.release();
-			});
-		});
+		this.props.playSoundInstrument(this.props.instrument.music);
 	}
 
 	render() {
