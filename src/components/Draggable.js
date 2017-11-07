@@ -7,7 +7,7 @@ import {
 	PanResponder,
 	Animated
 } from 'react-native';
-import Sound from 'react-native-sound';
+import appStyle from '../statics/styles/appStyle';
 
 
 export default class Draggable extends Component {
@@ -73,10 +73,4 @@ export default class Draggable extends Component {
 		);
 	}
 }
-
-let styles = StyleSheet.create({
-	instrument: {
-		marginLeft: 25,
-		marginRight: 25,
-	}
-});
+const styles = StyleSheet.create(appStyle);

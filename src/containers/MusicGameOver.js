@@ -49,9 +49,9 @@ export default class MusicGameOver extends Component {
 			<View style={styles.container}>
 				<ImageBackground style={styles.backgroudLevel} source={this.props.config.backgroudGameover}>
 					<View>
-						<Image source={require('../statics/images/estrellas.png')} />
+						<Image style={styles.stars} source={require('../statics/images/estrellas.png')} />
 					</View>
-					<View style={{ marginTop: 40 }}>
+					<View>
 						<Image style={styles.titleGameover} source={this.props.config.title} />
 					</View>
 					<View style={styles.containerImagesIntruments}>

@@ -128,7 +128,7 @@ export default class MusicGameScreen extends Component {
 				<ImageBackground style={styles.backgroudLevel} source={this.props.config.background}>
 					<View>
 						<TouchableOpacity onPress={() => this.stopOrPlay()}>
-							<Image style={{ margin: 5 }} source={this.state.btn} />
+							<Image style={styles.btnPlayOrStop} source={this.state.btn} />
 						</TouchableOpacity>
 					</View>
 					<Image style={styles.title} source={this.props.config.title} />
