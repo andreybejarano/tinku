@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import { Actions, ActionConst, Scene, Router } from 'react-native-router-flux';
 import { BackHandler } from 'react-native';
 import Orientation from 'react-native-orientation';
+import FullScreen from 'react-native-full-screen';
 import SplashScreen from './SplashScreen';
 import MainScreen from './MainScreen';
 import MusicListScreen from './MusicListScreen';
@@ -15,6 +16,9 @@ import MusicGameScreen from './MusicGameScreen';
 import MusicGameOver from './MusicGameOver';
 
 export default class App extends Component {
+	componentWillMount() {
+		FullScreen.onFullScreen();
+	}
 	componentDidMount() {
 		Orientation.lockToLandscape();
 		BackHandler.addEventListener('hardwareBackPress', this.handleBackButton);
