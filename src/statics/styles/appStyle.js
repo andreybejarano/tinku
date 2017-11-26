@@ -10,26 +10,28 @@ export default {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
+		width: '100%',
+		height: '100%',
 	},
 	backgroundScreen: {
 		flex: 1,
 		justifyContent: 'center',
 		alignItems: 'center',
-		width: width,
-		height: height,
+		width: '100%',
+		height: '100%',
 	},
 	backgroudLevel: {
-		width: width,
-		height: height,
+		width: '100%',
+		height: '100%',
 		justifyContent: 'center',
 		alignItems: 'center',
 	},
 	tituloMain: {
-		width: width * 0.405,
-		height: height * 0.355,
+		width: '42%',
+		height: '35%',
 	},
 	btnJugar: {
-		width: width * 0.305,
+		width: width * 0.33,
 		height: height * 0.105,
 		marginTop: height * 0.10,
 	},
@@ -49,7 +51,7 @@ export default {
 		width: width * 0.4,
 	},
 	stars: {
-		width: width * 0.41,
+		width: width * 0.43,
 		height: height * 0.25,
 	},
 	label: {
@@ -102,6 +104,8 @@ export default {
 	touchable: {
 		justifyContent: 'center',
 		alignItems: 'center',
+		width: '100%',
+		height: '100%'
 	},
 	backgroundSplash: {
 		width: width * 0.40,

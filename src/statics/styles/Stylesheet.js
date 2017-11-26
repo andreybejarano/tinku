@@ -2,7 +2,6 @@ import React from 'react-native';
 import Dimensions from 'Dimensions';
 import Orientation from 'react-native-orientation';
 
-
 // Precalculate Device Dimensions for better performance
 const x = Orientation.getInitialOrientation() == 'PORTRAIT' ? Dimensions.get('window').height : Dimensions.get('window').width;
 const y = Orientation.getInitialOrientation() == 'PORTRAIT' ? Dimensions.get('window').width : Dimensions.get('window').height;
