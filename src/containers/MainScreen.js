@@ -16,6 +16,10 @@ export default class MainScreen extends Component {
 		Actions.musicListScreen();
 	}
 
+	onRunScreen() {
+		Actions.runScreen();		
+	}
+
 
 	render() {
 		return (
@@ -23,6 +27,9 @@ export default class MainScreen extends Component {
 				<Image style={styles.backgroundScreen} source={require('../statics/images/fondoMain.png')}>
 					<Image style={styles.tituloMain} source={require('../statics/images/tituloMain.png')} />
 					<TouchableOpacity onPress={() => this.onMusicListScreen()}>
+						<Image style={styles.btnJugar} source={require('../statics/images/btnJugar.png')} />
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => this.onRunScreen()}>
 						<Image style={styles.btnJugar} source={require('../statics/images/btnJugar.png')} />
 					</TouchableOpacity>
 				</Image>

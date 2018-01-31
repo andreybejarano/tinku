@@ -14,6 +14,7 @@ import MainScreen from './MainScreen';
 import MusicListScreen from './MusicListScreen';
 import MusicGameScreen from './MusicGameScreen';
 import MusicGameOver from './MusicGameOver';
+import RunScreen from './RunScreen'; 
 
 export default class App extends Component {
 	componentWillMount() {
@@ -45,6 +46,7 @@ export default class App extends Component {
 					<Scene key="musicListScreen" component={MusicListScreen} hideNavBar />
 					<Scene key="musicGameScreen" component={MusicGameScreen} hideNavBar />
 					<Scene key="musicGameOver" component={MusicGameOver} hideNavBar />
+					<Scene key="runScreen" component={RunScreen} hideNavBar />					
 				</Scene>
 			</Router>
 		);
