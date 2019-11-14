@@ -17,15 +17,19 @@ export default class RunScreen extends Component {
         super(props);
         this.state = {
             pan: new Animated.ValueXY(),
-            panActor: new Animated.ValueXY()
+            panActor: new Animated.ValueXY(),
+            panObstable: new Animated.ValueXY()
         };
-        this.panResponder = PanResponder.create({
+        this.panResponderBackground = PanResponder.create({
             onStartShouldSetPanResponder: () => true
         });
         this.panResponderActor = PanResponder.create({
             onStartShouldSetPanResponder: () => true
         })
-
+        this.backgroundCount = [];
+        for (let i = 0; i <= 40; i++) {
+            this.backgroundCount.push({ id: i });
+        }
     }
 
     componentWillMount() {
@@ -35,7 +39,7 @@ export default class RunScreen extends Component {
                 toValue: {
                     x: -60000, y: 0
                 },
-                duration: 60000,
+                duration: 120000,
             }
         ).start();
     }
@@ -67,56 +71,31 @@ export default class RunScreen extends Component {
         return (
             <View style={{ position: 'relative' }}>
                 <Animated.View
-                    {...this.panResponder.panHandlers}
-                    style={[this.state.pan.getLayout(), { flex: 1, flexDirection: 'row' }]}>
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
-                    <Image style={{ width: 1500, height: 800 }} source={require('../statics/images/Desiertofondo.png')} />
+                    {...this.panResponderBackground.panHandlers}
+                    style={[this.state.pan.getLayout(), { flex: 1, flexDirection: 'row' }]}
+                >
+                    {
+                        this.backgroundCount.map(element => {
+                            return (
+                                <Image
+                                    key={element.id}
+                                    style={{ width: 1500, height: 800 }}
+                                    source={require('../statics/images/desierto/Desiertofondo.png')}
+                                />
+                            )
+                        })
+                    }
                 </Animated.View>
+                {/* <Animated.View style={{ position: 'absolute' }}>
+                    <Image style={{ zIndex: 101, top: '200%', left: '700%' }} source={require('../statics/images/desierto/cactus1.png')} />
+                </Animated.View> */}
                 <Animated.View
                     {...this.panResponderActor.panHandlers}
                     style={[this.state.panActor.getLayout(), { marginLeft: 24, position: 'relative' }]}
                 >
-                    <Image onTouchStart={() => this.jumpActor()} style={{ zIndex: 100, top: '165%' }} source={require('../statics/images/Tinku.png')} />
+                    <Image onTouchStart={() => this.jumpActor()} style={{ zIndex: 100, top: '165%' }} source={require('../statics/images/desierto/Tinku.png')} />
                 </Animated.View>
+
             </View>
         );
     }

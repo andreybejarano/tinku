@@ -23,6 +23,10 @@ export default class MusicListScreen extends Component {
 		Actions.musicGameScreen({ 'config': this.config[music] });
 	}
 
+	componentDidMount() {
+		console.warn(process.env.NODE_ENV)
+	}
+
 	render() {
 		return (
 			<View style={styles.container}>
